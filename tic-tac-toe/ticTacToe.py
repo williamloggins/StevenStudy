@@ -3,7 +3,7 @@ def main():
     playGame()
 
 def firstIntro():
-    print('Well hello mother fucka, press "I" to see instructions')
+    print('Well hello, press "I" to see instructions')
     print("Otherwise, press any other key to play Tic Tac Toe.")
     userInput = input()
     if userInput.upper() == "I":
