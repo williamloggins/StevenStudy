@@ -11,3 +11,16 @@ Steven and Blake's dedicated study repo.
   - Call other functions from main().
 
 We already have it set up this way but I finally just read that [Real Python link](https://realpython.com/python-main-function/) and I get it now. Legit good article 
+
+
+def playGame():
+    turn = 'X'
+    for i in range(9):
+        print_board(game_board)
+        print('Turn for ' + turn + '. Move on which space?')
+        position = input()
+        game_board[position] = turn
+        if turn == 'X':
+            turn = 'O'
+        else:
+            turn = 'X'

@@ -24,18 +24,6 @@ def instructions():
     print('1' + '|' + '2' + '|' + '3')
     print(" ")
 
-def playGame():
-    turn = 'X'
-    for i in range(9):
-        print_board(game_board)
-        print('Turn for ' + turn + '. Move on which space?')
-        position = input()
-        game_board[position] = turn
-        if turn == 'X':
-            turn = 'O'
-        else:
-            turn = 'X'
-
 def game_flow():
 #TODO this should handle player input
     turn = 'X'
@@ -65,7 +53,7 @@ def board_update(position, turn):
 
 def player_turn(turn):
 #TODO add validations here
-    return "X" if player_turn == "O" else "O"
+    return "X" if turn == "O" else "O"
 
 def check_winner():
     pass
