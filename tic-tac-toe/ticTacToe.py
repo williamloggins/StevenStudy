@@ -25,7 +25,6 @@ def instructions():
     print(" ")
 
 def game_flow():
-#TODO this should handle player input
     turn = 'X'
     for i in range(9):
         print_board(game_board, turn)
@@ -33,8 +32,15 @@ def game_flow():
         board_update(position, turn)
         turn = player_turn(turn)
 
-# This function prints the game board in a presentable way
+
 def print_board(locations, turn):
+    """
+    This function prints the game board in a presentable way
+    
+    :param int locations:
+    :param str turn:
+    :rtype None
+    """
     print(locations['7'] + '|' + locations['8'] + '|' + locations['9'])
     print('-+-+-')
     print(locations['4'] + '|' + locations['5'] + '|' + locations['6'])
@@ -43,16 +49,15 @@ def print_board(locations, turn):
     print('Turn for ' + turn + '. Move on which space?')
 
 def player_position():
-#TODO add validations here
+# check it input is either "i" or numbers 1-9. if so, proceed. if not, send back for error message
     position = input()
     return position
 
 def board_update(position, turn):
-#TODO this should handle updating the board
+# check if board position is empty. if empty, proceed. if not, send back to game loop and provide error message regarding invalid spot
     game_board[position] = turn
 
 def player_turn(turn):
-#TODO add validations here
     return "X" if turn == "O" else "O"
 
 def check_winner():
@@ -60,19 +65,3 @@ def check_winner():
 
 if __name__ == "__main__":
     main()
-
-# TODO
-# who wins code
-# add turn counter, "if turn is >= 5, then run check function"
-# exception handling (numbers only, 1-9)
-# make game object oriented
-# make it to where user can type I anytime
-# while there is no winner, keep going
-# Handles the player turn and functionality of the game
-# TODO seperate player handling from game handling
-# TODO Player turn 
-# TODO game handling function
-# TODO check winner function
-# TODO handle winner function
-# TODO Let player enter "I" during player choice to call instructions
-
