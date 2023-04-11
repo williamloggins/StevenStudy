@@ -39,7 +39,7 @@ def print_board(locations, turn):
     
     :param int locations:
     :param str turn:
-    :rtype None
+    :rtype: None
     """
     print(locations['7'] + '|' + locations['8'] + '|' + locations['9'])
     print('-+-+-')
