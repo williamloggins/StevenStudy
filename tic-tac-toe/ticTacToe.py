@@ -25,6 +25,13 @@ def instructions():
     print(" ")
 
 def game_flow():
+    """
+    This function is the main game flow that calls the other methods
+    
+    :param str position:
+    :param str turn:
+    :rtype: None
+    """
     turn = 'X'
     for i in range(9):
         print_board(game_board, turn)
@@ -49,15 +56,34 @@ def print_board(locations, turn):
     print('Turn for ' + turn + '. Move on which space?')
 
 def player_position():
-# check it input is either "i" or numbers 1-9. if so, proceed. if not, send back for error message
+    """
+    This function takes the position the player chooses and returns it
+    
+    :param str position:
+    :rtype: str
+    """
+# check if input is either "i" or numbers 1-9. if so, proceed. if not, send back for error message
     position = input()
     return position
 
 def board_update(position, turn):
+    """
+    This function assigns either X or O to the position the player chose by updated the game_board dictionary
+    
+    :param str position:
+    :param str turn:
+    :rtype: None
+    """
 # check if board position is empty. if empty, proceed. if not, send back to game loop and provide error message regarding invalid spot
     game_board[position] = turn
 
 def player_turn(turn):
+    """
+    This function swaps between who's turn it is; O and X
+
+    :param str turn:
+    :rtype: str
+    """
     return "X" if turn == "O" else "O"
 
 def check_winner():
